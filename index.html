@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div id="text">Click the button below to change the number of the boxes below.
+    </div>
+
+    <div id="btn-container">
+        <button id="modal-btn">Box</button>
+    </div>
+
+    <!-- modal -->
+    <div class="hidden" id="modal">
+        <button id="close-btn">&times;</button>
+        <div class="modal-body">
+            Please input a number between 0 to 100 to change the
+        </div>
+        <div class="modal-body body-two" >
+            number of boxes inside the grid.
+        </div>
+        <input type="text" id="user-input"> <br>
+        <button id="enter">
+            Enter
+        </button>
+    </div>
+
+    <div class="hidden" id="overlay"></div>
+    <div id="box-container"></div>
+</body>
+</html>
