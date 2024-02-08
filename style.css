@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #658EA9;
+    background-color: #B1D4E0;
 }
 
 #text {
@@ -13,6 +13,7 @@ body {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
+    color: #003060;
 }
 
 #modal-btn {
@@ -26,6 +27,10 @@ body {
 #btn-container {
     text-align: center;
     margin-bottom: 10px;
+}
+
+#modal-btn {
+    color: #003060;
 }
 
 /*-------- modal */
