@@ -14,10 +14,15 @@ function defaultNumberBoxes() {
         box.style.borderRadius = '10px';
         box.style.display = 'flex';
         box.style.flex = 'wrap';
-        box.style.transition = 'background-color 1s ease-out 50ms';
+        box.style.transition = 'background-color ease in 10ms';
+
+        box.addEventListener('mouseenter', function(event) {
+            event.target.style.backgroundColor = '#68BBE3';
+        })
         
         box.addEventListener('mouseleave', function(event) {
-            event.target.style.backgroundColor = '#68BBE3';
+            event.target.style.backgroundColor = '#003060';
+            event.target.style.transition = 'all 1s';
         })
 
         boxContainer.appendChild(box);
@@ -55,10 +60,15 @@ function createGrid(gridSize) {
         box.style.width = boxSize + 'px';
         box.style.backgroundColor = '#003060';
         box.style.borderRadius = '10px';
-        box.style.transition = 'background-color 1s ease-out 50ms';
+        box.style.transition = 'background-color ease in 10ms';
 
-        box.addEventListener('mouseleave', function(event) {
+        box.addEventListener('mouseenter', function(event) {
             event.target.style.backgroundColor = '#68BBE3';
+        })
+        
+        box.addEventListener('mouseleave', function(event) {
+            event.target.style.backgroundColor = '#003060';
+            event.target.style.transition = 'all 1s';
         })
 
         boxContainer.appendChild(box);
@@ -66,13 +76,13 @@ function createGrid(gridSize) {
 }
 
 function getUserInput() {
-    const input = document.querySelector('#user-input');
     const inputValue = parseInt(input.value);
     input.value = '';
     createGrid(inputValue);
 }
 
                 //variables for eventlisteners
+const input = document.querySelector('#user-input');
 const openModalBtn = document.querySelector('#modal-btn');
 const closeModalBtn = document.querySelector('#close-btn');
 const enterBtn = document.querySelector('#enter');
@@ -82,3 +92,9 @@ openModalBtn.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', closeModal);
 enterBtn.addEventListener('click', closeModal);
 enterBtn.addEventListener('click', getUserInput);
+input.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        getUserInput();
+        closeModal();
+    }
+});
